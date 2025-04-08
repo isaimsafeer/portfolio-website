@@ -4,11 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Home</title>
+
   </head>
   <body>
     {% extends 'base.html' %}
@@ -16,8 +16,89 @@
     {% block title %}Home - Saim Safeer{% endblock %}
 
     {% block content %}
-    <h1>Welcome to the Home Page</h1>
-    <p>This is your homepage content.</p>
+    {% load static %}
+
+    <div class="jumbotron bg-white text-black p-5 p-md-3">
+        <div class="text-left">
+            <h1 class="typed-out" style="font-size: clamp(1.5rem, 4vw, 2rem);">
+                Hi, I'm Saim Safeer AI/ML Developer!
+            </h1>
+        </div>
+        <style>
+            .typed-out {
+                overflow: hidden;
+                white-space: nowrap;
+                border-right: 2px solid;
+                display: inline-block;
+                animation: typing 3.5s steps(30, end) forwards,
+                           blink 0.75s step-end 3.5s,
+                           hide-cursor 0.1s ease 3.5s forwards;
+            }
+    
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 31ch; }
+            }
+    
+            @keyframes blink {
+                from, to { border-color: transparent; }
+                50% { border-color: black; }
+            }
+    
+            @keyframes hide-cursor {
+                to { border-right: none; }
+            }
+    
+            /* Ensure left alignment and mobile responsiveness */
+            .text-left {
+                text-align: left !important; /* Override any parent alignment */
+            }
+    
+            @media (max-width: 768px) {
+                .typed-out {
+                    white-space: normal;
+                    width: 100%;
+                    animation: typing 3.5s steps(30, end) forwards,
+                              blink 0.75s step-end 3.5s,
+                              hide-cursor 0.1s ease 3.5s forwards;
+                }
+                .d-flex {
+                    flex-direction: column;
+                    align-items: flex-start; /* Changed from center to start */
+                }
+                .fa-5x {
+                    font-size: 3rem;
+                    margin: 1rem 0;
+                }
+                .btn {
+                    margin: 0.5rem 0;
+                    width: 100%;
+                }
+                .jumbotron {
+                    padding: 2rem 1rem !important;
+                    text-align: left !important; /* Override text-center on mobile */
+                }
+                .lead {
+                    text-align: left !important;
+                }
+            }
+        </style>
+        <p class="lead text-left">I have hands-on experience in the following technologies:</p>
+        <div class="d-flex justify-content-start my-4">
+            <i class="fab fa-python fa-5x mx-3"></i>
+            <i class="fab fa-html5 fa-5x mx-3"></i>
+            <i class="fab fa-css3-alt fa-5x mx-3"></i>
+            <i class="fab fa-js-square fa-5x mx-3"></i>
+        </div>
+        <hr class="my-4">
+        <p class="text-left">My expertise includes model training with Keras, TensorFlow, and scikit-learn, as well as working with frameworks like LangChain, Crew AI, and OpenAI.</p>
+        <p class="lead">
+            <button type="button" class="btn btn-dark">Explore My Projects</button>
+            <button type="button" class="btn btn-dark">Explore My Services</button>
+        </p>
+    </div>
+
+    
     {% endblock %}
 
     <!-- Optional JavaScript; choose one of the two! -->
