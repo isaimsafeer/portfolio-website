@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Services - Saim Safeer</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    
+    {% block title %}Services{% endblock %}
+
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'services.css' %}">
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <h1>Services</h1>
+            <p>Explore my expertise in AI, Machine Learning, and Web Development</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container">
+        <div class="row g-4">
+            <!-- AI Development -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Development</h3>
+                    <p>Custom artificial intelligence solutions including natural language processing, computer vision, and predictive analytics to solve complex business problems.</p>
+                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Building and deploying ML models for automation, optimization, and decision-making using state-of-the-art algorithms and frameworks.</p>
+                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Creating robust, scalable websites and web applications using Python Django with modern design and functionality.</p>
+                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Consulting (Optional Additional Service) -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>AI Consulting</h3>
+                    <p>Providing expert guidance on integrating AI and ML into your business processes for maximum efficiency and innovation.</p>
+                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, index * 200); // 200ms delay between each card
+            });
+        });
+        </script>
+    {% endblock %}
+</body>
+</html>

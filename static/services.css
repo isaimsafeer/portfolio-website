@@ -1,0 +1,92 @@
+/* services.css */
+/* General Styling */
+body {
+    background-color: #f5f7fb;
+    color: #333;
+}
+.header-section {
+    text-align: center;
+    padding: 40px 0;
+}
+.header-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease; /* Added for smooth transition */
+}
+.header-section h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: rgb(24, 24, 24);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition for width change */
+}
+.header-section h1:hover::after {
+    width: 80px; /* Increases width on hover */
+}
+.header-section p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* Service Cards */
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease-out;
+}
+
+.service-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(0) scale(1.05);
+}
+
+.service-card i {
+    color: rgb(24, 24, 24);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+.service-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.service-card a {
+    color: rgb(24, 24, 24);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.service-card a:hover {
+    color: rgb(24, 24, 24);
+}
+.service-card a i {
+    font-size: 1rem;
+    margin-left: 5px;
+}
