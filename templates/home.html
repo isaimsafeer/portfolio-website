@@ -17,133 +17,46 @@
 
     {% block content %}
     {% load static %}
-
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- HTML Code -->
     <div class="jumbotron bg-white text-black p-5 p-md-3">
-        <div class="d-flex align-items-center justify-content-between flex-wrap">
-            <div class="row w-100">
-                <!-- Text Content on Left -->
-                <div class="col-12 col-md-8 text-left">
-                    <h1 class="typed-out" style="font-size: clamp(1.5rem, 4vw, 2rem);">
-                        Hi, I'm Saim Safeer AI/ML Developer!
+        <div class="row">
+            <!-- Text Content on Left -->
+            <div class="col-12 col-md-8 text-content">
+                <div class="typed-container">
+                    <h1 class="typed-out">
+                        <span class="mobile-block">Hi, I'm Saim Safeer</span>
+                        <span class="mobile-block">AI/ML Developer!</span>
                     </h1>
-                    <p class="lead text-left">I have hands-on experience in the following technologies:</p>
-                    <div class="d-flex justify-content-start my-4">
-                        <i class="fab fa-python fa-5x mx-3"></i>
-                        <i class="fab fa-html5 fa-5x mx-3"></i>
-                        <i class="fab fa-css3-alt fa-5x mx-3"></i>
-                        <i class="fab fa-js-square fa-5x mx-3"></i>
-                    </div>
                 </div>
-                <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
-                    <img src="https://img.freepik.com/free-vector/code-typing-concept-illustration_114360-4296.jpg?t=st=1744109911~exp=1744113511~hmac=07e3810f5ae37067548c94bed11f6ccb036a34c1a4aabc5bcd1a2cf8a34d9603&w=740" 
-                         alt="Coding Avatar" 
-                         class="coding-avatar">
+                <p class="lead">I have hands-on experience in the following technologies:</p>
+                <div class="tech-icons d-flex my-4">
+                    <i class="fab fa-python fa-5x mx-3"></i>
+                    <i class="fab fa-html5 fa-5x mx-3"></i>
+                    <i class="fab fa-css3-alt fa-5x mx-3"></i>
+                    <i class="fab fa-js-square fa-5x mx-3"></i>
                 </div>
-                    <hr class="my-4">
-                    <p class="text-left">My expertise includes model training with Keras, TensorFlow, and scikit-learn, as well as working with frameworks like LangChain, Crew AI, and OpenAI.</p>
-                    <p class="lead">
-                        <a href="/projects" class="btn btn-dark">Explore My Projects</a>
-                        <button type="button" class="btn btn-dark">Explore My Services</button>
-                    </p>
-                
+            </div>
+            
+            <!-- Avatar on Right -->
+            <div class="col-12 col-md-4 avatar-container">
+                <img src="https://img.freepik.com/free-vector/code-typing-concept-illustration_114360-4296.jpg?t=st=1744109911~exp=1744113511~hmac=07e3810f5ae37067548c94bed11f6ccb036a34c1a4aabc5bcd1a2cf8a34d9603&w=740" 
+                     alt="Coding Avatar" 
+                     class="coding-avatar">
+            </div>
+            
+            <!-- Additional Content (Full Width) -->
+            <div class="col-12">
+                <hr class="my-4">
+                <p>My expertise includes model training with Keras, TensorFlow, and scikit-learn, as well as working with frameworks like LangChain, Crew AI, and OpenAI.</p>
+                <div class="action-buttons">
+                    <a href="/projects" class="btn btn-dark">Explore My Projects</a>
+                    <button type="button" class="btn btn-dark">Explore My Services</button>
+                </div>
             </div>
         </div>
-    
-        <style>
-    .typed-out {
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 2px solid;
-        display: inline-block;
-        animation: typing 3.5s steps(30, end) forwards,
-                   blink 0.75s step-end 3.5s,
-                   hide-cursor 0.1s ease 3.5s forwards;
-    }
-    
-    @keyframes typing {
-        from { width: 0; }
-        to { width: 31ch; }
-    }
-    
-    @keyframes blink {
-        from, to { border-color: transparent; }
-        50% { border-color: black; }
-    }
-    
-    @keyframes hide-cursor {
-        to { border-right: none; }
-    }
-    
-    /* Ensure left alignment and mobile responsiveness */
-    .text-left {
-        text-align: left !important;
-    }
-
-    /* Style for the coding avatar */
-    .coding-avatar {
-        width: 400px !important;
-        height: auto !important;
-        object-fit: contain;
-        max-width: 100%; /* fallback */
-        display: block;
-    }
-
-    @media (max-width: 768px) {
-        .typed-out {
-            white-space: nowrap;
-            max-width: 100%;
-            width: auto;
-            animation: typing 3.5s steps(30, end) forwards,
-                       blink 0.75s step-end 3.5s,
-                       hide-cursor 0.1s ease 3.5s forwards;
-        }
-        .d-flex {
-            flex-direction: row; /* Keep items horizontally aligned */
-            align-items: center; /* Vertically center items */
-            justify-content: space-between; /* Space the items out */
-        }
-        .fa-5x {
-            font-size: 3rem;
-            margin: 1rem 0;
-        }
-        .btn {
-            margin: 0.5rem 0;
-            width: 100%;
-        }
-        .jumbotron {
-            padding: 2rem 1rem !important;
-            text-align: left !important;
-        }
-        .lead {
-            text-align: left !important;
-        }
-
-        /* Align the avatar on the right side and icons on the left in mobile view */
-        .col-12 .d-flex {
-            justify-content: space-between !important;
-            flex-wrap: nowrap; /* Prevent wrapping */
-        }
-
-        /* Adjust avatar size for mobile */
-        .coding-avatar {
-            width: 150px; /* Smaller size for mobile */
-            height: auto;
-            margin-left: 1rem; /* Add margin to the left of the avatar */
-        }
-    }
-
-    /* Add margin to text container on larger screens */
-    @media (min-width: 768px) {
-        .col-md-8 {
-            margin-top: 100px; /* Adjust value as needed */
-        }
-    }
-</style>
-
-        
     </div>
 
-    
     {% endblock %}
 
     <!-- Optional JavaScript; choose one of the two! -->
