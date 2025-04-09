@@ -1,17 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons for social media -->
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <title>Contact</title>
+    
+    <style>
+      /* Custom responsive styles */
+      @media (max-width: 767.98px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        
+        h2 {
+          font-size: 1.75rem;
+        }
+        
+        .btn {
+          width: 100%;
+        }
+        
+        .social-icons {
+          justify-content: center;
+          gap: 1.5rem;
+        }
+        
+        .contact-info {
+          margin-top: 2rem;
+        }
+      }
+      
+      /* Ensure contact info box takes full height on desktop */
+      @media (min-width: 768px) {
+        .contact-info {
+          height: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     {% extends 'base.html' %}
@@ -24,8 +56,7 @@
       
       <div class="row g-4">
         <!-- Contact Form -->
-        <div class="col-md-6">
-          <!-- Success Alert (Hidden by default) -->
+        <div class="col-md-6 col-12">
           <div id="successAlert" class="alert alert-success d-none" role="alert">
             Your message has been sent successfully!
           </div>
@@ -47,31 +78,29 @@
           </form>
         </div>
 
-       <!-- Contact Info -->
-       <div class="col-md-6">
-        <div class="bg-light p-4 rounded shadow-sm h-100">
-          <h4 class="mb-4">Get in touch directly</h4>
-          <p><i class="bi bi-telephone-fill me-2"></i> +92 336 5057210</p>
-          <p><i class="bi bi-envelope-fill me-2"></i> isaimsafeer@gmail.com</p>
-          <p><i class="bi bi-geo-alt-fill me-2"></i> Islamabad, Pakistan</p>
+        <!-- Contact Info -->
+        <div class="col-md-6 col-12">
+          <div class="bg-light p-4 rounded shadow-sm contact-info">
+            <h4 class="mb-4">Get in touch directly</h4>
+            <p><i class="bi bi-telephone-fill me-2"></i> +92 336 5057210</p>
+            <p><i class="bi bi-envelope-fill me-2"></i> isaimsafeer@gmail.com</p>
+            <p><i class="bi bi-geo-alt-fill me-2"></i> Islamabad, Pakistan</p>
 
-          <h5 class="mt-4">Follow me</h5>
-          <div class="d-flex">
-            <a href="https://facebook.com" target="_blank" class="me-3 text-dark fs-4"><i class="bi bi-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank" class="me-3 text-dark fs-4"><i class="bi bi-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" class="me-3 text-dark fs-4"><i class="bi bi-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="text-dark fs-4"><i class="bi bi-linkedin"></i></a>
+            <h5 class="mt-4">Follow me</h5>
+            <div class="d-flex social-icons">
+              <a href="https://facebook.com" target="_blank" class="text-dark fs-4"><i class="bi bi-facebook"></i></a>
+              <a href="https://twitter.com" target="_blank" class="text-dark fs-4"><i class="bi bi-twitter"></i></a>
+              <a href="https://instagram.com" target="_blank" class="text-dark fs-4"><i class="bi bi-instagram"></i></a>
+              <a href="https://linkedin.com" target="_blank" class="text-dark fs-4"><i class="bi bi-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
     <script>
-      // Show success message after form submission
       document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Stop default form submission
-
+        event.preventDefault();
         const form = event.target;
         const data = new FormData(form);
 
@@ -83,8 +112,12 @@
           }
         }).then(response => {
           if (response.ok) {
-            form.reset(); // Clear the form
+            form.reset();
             document.getElementById('successAlert').classList.remove('d-none');
+            // Hide alert after 3 seconds
+            setTimeout(() => {
+              document.getElementById('successAlert').classList.add('d-none');
+            }, 3000);
           } else {
             alert('Oops! There was a problem submitting your form.');
           }
@@ -93,7 +126,6 @@
         });
       });
     </script>
-
     {% endblock %}
   </body>
 </html>
