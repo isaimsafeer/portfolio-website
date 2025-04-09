@@ -37,10 +37,22 @@
         }
       }
       
-      /* Ensure contact info box takes full height on desktop */
+      /* Desktop specific styles */
       @media (min-width: 768px) {
         .contact-info {
           height: 100%;
+        }
+        
+        .social-icons {
+          gap: 1rem; /* Consistent spacing between icons on desktop */
+        }
+        
+        .social-icons a {
+          margin-right: 1rem; /* Additional spacing control */
+        }
+        
+        .social-icons a:last-child {
+          margin-right: 0; /* Remove margin from last icon */
         }
       }
     </style>
@@ -52,8 +64,37 @@
 
     {% block content %}
     <div class="container py-5">
-      <h2 class="text-center mb-5">Contact Me</h2>
-      
+      <div class="header-section">
+        <h1>Contact Me</h1>
+      </div>
+      <style>
+        .header-section {
+  text-align: center;
+  padding: 5px 0; /* Adjust the vertical padding here */
+}
+.header-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease; /* Added for smooth transition */
+}
+.header-section h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: rgb(24, 24, 24);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition for width change */
+}
+.header-section h1:hover::after {
+    width: 80px; /* Increases width on hover */
+}
+      </style>
       <div class="row g-4">
         <!-- Contact Form -->
         <div class="col-md-6 col-12">
@@ -114,7 +155,6 @@
           if (response.ok) {
             form.reset();
             document.getElementById('successAlert').classList.remove('d-none');
-            // Hide alert after 3 seconds
             setTimeout(() => {
               document.getElementById('successAlert').classList.add('d-none');
             }, 3000);
