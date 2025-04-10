@@ -1,163 +1,206 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-h1, h2, h3, h4 {
-  margin-bottom: 1rem;
-}
-
-ul {
-  padding-left: 1.25rem;
-}
-
-/* Custom styles for About Me section */
-/* Custom styles for About Me section */
+/* About Section Styles */
 .about-section {
-  background-color: #f8f9fa;
-  padding: 5rem 0;
-  margin-top: -30px; /* Negative margin to bring the section closer */
+    background-color: #f8f9fa;
+    padding: 60px 0;
 }
 
 .header-section {
-  text-align: center;
-  padding: 20px 0; /* Reduced padding */
+    text-align: center;
+    padding: 10px 0 30px;
+    width: 100%;
 }
 
 .header-section h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s ease;
-  margin-top: 0;
-  margin-bottom: 0; 
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 0 auto;
 }
 
-
 .header-section h1::after {
-  content: '';
-  width: 50px;
-  height: 3px;
-  background: #181818;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: rgb(24, 24, 24);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
 .header-section h1:hover::after {
-  width: 180px;
+    width: 80px;
 }
 
-.header-section p {
-  color: #666;
-  font-size: 1.1rem;
-  margin-top: 20px;
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(24,24,24);
+    margin-bottom: 10px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #6c757d;
 }
 
 .about-image {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
 }
 
 .about-image:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-.about-content h2 {
-  font-size: 1.5rem;
-  color: #6c757d;
-  text-transform: uppercase;
+.section-divider {
+    margin: 40px 0;
+    border-top: 1px solid #dee2e6;
 }
 
-.about-content h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
+/* Skills Section Styles */
 .skills-section {
-  margin-top: 3rem;
-}
-
-.skills-section h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #343a40;
-  margin-bottom: 2rem;
-}
-
-.skills-section h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .skill-card {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Button Styling */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h4 {
+    font-size: 1.5rem;
+    color: rgb(24,24,24);
+    margin-bottom: 15px;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.skill-card li {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+/* Button Styles */
 .btn-dark {
-  background-color: #343a40;
-  color: white;
-  border-radius: 5px;
-  padding: 0.75rem 1.25rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.btn-dark:hover {
-  background-color: #5a6268;
+.btn-dark:hover,
+.btn-dark:active {
+    transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
-@media (max-width: 767.98px) {
-  .about-image {
-      width: 80%;
-      margin-bottom: 2rem;
-  }
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 2rem;
+    }
 
-  .header-section h1 {
-      font-size: 2rem;
-  }
+    .section-heading {
+        font-size: 1.8rem;
+    }
 
-  .skills-section {
-      margin-top: 2rem;
-  }
+    .lead {
+        font-size: 1rem;
+    }
 
-  .skills-section h2 {
-      font-size: 2rem;
-  }
+    .about-image {
+        max-width: 250px;
+        margin: 15px auto;
+    }
 
-  .skills-section h4 {
-      font-size: 1.125rem;
-  }
+    .btn-dark {
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+        min-height: 48px;
+    }
+    
+    .about-section, .skills-section {
+        padding: 40px 0;
+    }
+    
+    .skill-card {
+        min-height: 250px;
+    }
+}
 
-  .about-content h1 {
-      font-size: 1.75rem;
-  }
+/* Extra small screens */
+@media (max-width: 576px) {
+    .header-section h1 {
+        font-size: 1.8rem;
+    }
 
-  .about-content h2 {
-      font-size: 1.25rem;
-  }
+    .section-heading {
+        font-size: 1.5rem;
+    }
 
-  .signature {
-      font-size: 1.5rem;
-  }
+    .lead {
+        font-size: 0.9rem;
+    }
+
+    .about-image {
+        max-width: 200px;
+        margin: 10px auto 20px;
+    }
+
+    .about-section, .skills-section {
+        padding: 30px 15px;
+    }
+
+    .btn-dark {
+        padding: 8px 16px;
+        max-width: 200px;
+    }
+    
+    .skill-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .skill-card li {
+        font-size: 1rem;
+    }
 }

@@ -14,72 +14,154 @@
   <body>
     {% extends 'base.html' %}
 
-    {% block title %}About Me{% endblock %}
+{% block title %}About Me{% endblock %}
 
-    {% block content %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'about.css' %}">
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="container">
-          <div class="row">
-              <div class="header-section">
-                  <h1>About Me</h1>
-              </div>
-              <div class="col-lg-6 text-center">
-                  <img src="https://media.licdn.com/dms/image/v2/D4E03AQHtUKhuOn0R8A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723746897771?e=2147483647&v=beta&t=2fUKJFO_vBm5WFiMWrxZ6H9fOO28qfJYhDkVEqSUyOE" 
-                       alt="Saim Safeer" 
-                       class="about-image rounded-circle">
-              </div>
-              <div class="col-lg-6 mb-4 mb-lg-0">
-                  <p class="lead">A passionate AI & Web Developer with a knack for creating innovative solutions.</p>
-                  <p>I'm Saim Safeer, a developer with expertise in both artificial intelligence and web development.</p>
-                  <a href="#" class="btn btn-dark mt-3">Download CV</a>
-              </div>
-          </div>
-      </div>
-  </section>
-  
-  <hr class="section-divider">
-  
-  <section id="skills" class="skills-section">
-      <div class="container">
-          <div class="row text-center">
-              <div class="col-lg-12">
-                  <h2 class="section-heading">My Skills</h2>
-                  <p class="lead">Technical expertise and proficiencies</p>
-              </div>
-          </div>
-          <div class="row mt-4">
-              <div class="col-md-4">
-                  <h4>AI Development</h4>
-                  <ul class="list-unstyled">
-                      <li>Machine Learning</li>
-                      <li>Deep Learning</li>
-                      <li>Generative AI</li>
-                  </ul>
-              </div>
-              <div class="col-md-4">
-                  <h4>Web Development</h4>
-                  <ul class="list-unstyled">
-                      <li>HTML</li>
-                      <li>CSS</li>
-                      <li>JavaScript</li>
-                  </ul>
-              </div>
-              <div class="col-md-4">
-                  <h4>Tools & Technologies</h4>
-                  <ul class="list-unstyled">
-                      <li>Python</li>
-                      <li>Git</li>
-                      <li>Docker</li>
-                      <li>AWS</li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </section>
-  
-    {% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="/static/about.css">
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 header-section">
+                <h1>About Me</h1>
+            </div>
+        </div>
+        
+        <div class="about-card">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <div class="profile-container mb-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHtUKhuOn0R8A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723746897771?e=2147483647&v=beta&t=2fUKJFO_vBm5WFiMWrxZ6H9fOO28qfJYhDkVEqSUyOE" 
+                            alt="Saim Safeer" 
+                            class="profile-img">
+                        <div class="profile-back">
+                            <span>Hover to explore!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>isaimsafeer@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Islamabad, Pakistan</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-dark btn-custom me-2">
+                            <i class="bi bi-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8 mt-4 mt-lg-0">
+                    <p class="lead">A passionate <span class="accent-text">AI & Web Developer</span> with a knack for creating innovative solutions.</p>
+                    
+                    <p>I'm <span class="accent-text">Saim Safeer</span>, a developer with expertise in both artificial intelligence and web development. I specialize in creating intelligent solutions that bridge the gap between complex algorithms and user-friendly web applications. With a passion for continuous learning and innovation, I strive to build impactful projects that not only solve real-world problems but also deliver exceptional user experiences.</p>
+                    
+                    <div class="skill-tags mt-4">
+                        <span class="skill-tag" data-skill="ai">AI Development</span>
+                        <span class="skill-tag" data-skill="web">Web Development</span>
+                        <span class="skill-tag" data-skill="ml">Machine Learning</span>
+                        <span class="skill-tag" data-skill="tools">Tools and Technologies</span>
+                    </div>
+                    
+                    <!-- AI Development Skills -->
+                    <div id="ai-skills" class="skill-details">
+                        <h5 class="mb-3">AI Development Skills</h5>
+                        <div>
+                            <span class="skill-item">RAG-based Chatbots</span>
+                            <span class="skill-item">LLM Fine-tuning</span>
+                            <span class="skill-item">Prompt Engineering</span>
+                            <span class="skill-item">Vector Databases</span>
+                            <span class="skill-item">AI Integration</span>
+                            <span class="skill-item">LangChain</span>
+                            <span class="skill-item">Natural Language Processing</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Development Skills -->
+                    <div id="web-skills" class="skill-details">
+                        <h5 class="mb-3">Web Development Skills</h5>
+                        <div>
+                            <span class="skill-item">HTML5</span>
+                            <span class="skill-item">CSS3</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Bootstrap</span>
+                            <span class="skill-item">Django and Flask</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Machine Learning Skills -->
+                    <div id="ml-skills" class="skill-details">
+                        <h5 class="mb-3">Machine Learning Skills</h5>
+                        <div>
+                            <span class="skill-item">Data Processing</span>
+                            <span class="skill-item">Deep Learning</span>
+                            <span class="skill-item">RNNs and CNNs</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">Keras</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools and Technologies -->
+                    <div id="tools-skills" class="skill-details">
+                        <h5 class="mb-3">Tools and Technologies</h5>
+                        <div>
+                            <span class="skill-item">Git and Github</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Interactive skill tags
+        const skillTags = document.querySelectorAll('.skill-tag');
+        const skillDetails = document.querySelectorAll('.skill-details');
+        
+        // Show AI skills by default
+        document.getElementById('ai-skills').style.display = 'block';
+        skillTags[0].classList.add('active');
+        
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const skillType = this.getAttribute('data-skill');
+                
+                // Hide all skill details
+                skillDetails.forEach(detail => {
+                    detail.style.display = 'none';
+                });
+                
+                // Reset all tags
+                skillTags.forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Show selected skill details
+                document.getElementById(`${skillType}-skills`).style.display = 'block';
+                
+                // Highlight clicked tag
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
   </body>
 </html>
