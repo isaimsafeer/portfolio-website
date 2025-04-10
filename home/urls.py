@@ -10,5 +10,6 @@ urlpatterns = [
      path('services', views.services, name='services'),
     path('projects', views.projects, name='projects'),
     path('contact', views.contact, name='contact'),
+    path('chatbot/ask/', views.ask_chatbot, name='ask_chatbot'),
     
 ]+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

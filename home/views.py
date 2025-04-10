@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def home(request):
@@ -15,3 +17,9 @@ def projects(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+@csrf_exempt
+def ask_chatbot(request):
+    return render(request, 'chatbot.html')
+        

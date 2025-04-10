@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chatbot.css' %}">
+</head>
+<body>
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" class="chatbot-icon">
+        <i class="fas fa-comment-dots"></i> <!-- This is a sample icon -->
+    </div>
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="chatbot-modal">
+        <div class="chatbot-header">
+            <button id="close-chatbot" class="close-chatbot">&times;</button>
+            <h3>Chat with us!</h3>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages">
+            <!-- Chatbot messages will appear here -->
+        </div>
+        <textarea id="chatbot-input" class="chatbot-input" placeholder="Ask something..."></textarea>
+        <button id="send-message" class="send-message">Send</button>
+    </div>
+
+    <script>
+        document.getElementById("chatbot-icon").onclick = function() {
+    document.getElementById("chatbot-modal").style.display = "block";
+};
+
+document.getElementById("close-chatbot").onclick = function() {
+    document.getElementById("chatbot-modal").style.display = "none";
+};
+
+document.getElementById("send-message").onclick = function() {
+    let userMessage = document.getElementById("chatbot-input").value;
+    if (userMessage.trim() === "") return;
+    
+    // Display user message
+    let messages = document.getElementById("chatbot-messages");
+    let userMessageDiv = document.createElement("div");
+    userMessageDiv.classList.add("user-message");
+    userMessageDiv.textContent = "You: " + userMessage;
+    messages.appendChild(userMessageDiv);
+    
+    // Call backend to process the message and get the chatbot response
+    fetch("/chatbot/ask/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: userMessage }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        let botMessageDiv = document.createElement("div");
+        botMessageDiv.classList.add("bot-message");
+        botMessageDiv.textContent = "Bot: " + data.response;
+        messages.appendChild(botMessageDiv);
+        document.getElementById("chatbot-input").value = "";  // Clear input field
+        messages.scrollTop = messages.scrollHeight;  // Scroll to latest message
+    })
+    .catch(error => console.error("Error:", error));
+};
+
+    </script>
+</body>
+</html>
