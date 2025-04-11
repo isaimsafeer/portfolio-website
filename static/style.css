@@ -35,15 +35,22 @@
     height: auto;
     object-fit: contain;
     display: block;
-    animation: slideInFromRight 1s ease-out forwards;
+    animation: fadeIn 1s ease-out forwards; /* Changed to fadeIn */
 }
 
 hr.my-4 {
-    margin-top: 1rem !important;  /* Reduce top margin of the hr */
-    margin-bottom: 1rem !important; /* Reduce bottom margin of the hr */
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
-@keyframes slideInFromRight {
+/* Moved fadeIn to common styles for reuse */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 4; }
+}
+
+/* Removed slideInFromRight since it's no longer used */
+ /* @keyframes slideInFromRight {
     0% {
         transform: translateX(100%);
         opacity: 0;
@@ -52,7 +59,7 @@ hr.my-4 {
         transform: translateX(0);
         opacity: 1;
     }
-}
+} */
 
 /* ==================== DESKTOP STYLES (min-width: 768px) ==================== */
 @media (min-width: 768px) {
@@ -122,11 +129,6 @@ hr.my-4 {
         animation: fadeIn 1.5s ease-out forwards;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
     .lead, p {
         text-align: center;
     }
@@ -140,22 +142,20 @@ hr.my-4 {
         margin: 0.5rem;
     }
 
-    /* Adjusted spacing for mobile avatar */
     .coding-avatar {
         width: 280px;
-        margin: 1rem auto 0.5rem; /* Reduced bottom margin */
+        margin: 1rem auto 0.5rem;
     }
 
     .avatar-container {
         display: flex;
         justify-content: center;
-        margin: 0.5rem 0; /* Reduced vertical margins */
-        padding-bottom: 0; /* Remove any bottom padding */
+        margin: 0.5rem 0;
+        padding-bottom: 0;
     }
     
-    /* Fix spacing after avatar */
     .col-12.mt-4 {
-        margin-top: 0.5rem !important; /* Override Bootstrap's mt-4 */
+        margin-top: 0.5rem !important;
     }
 
     .action-buttons {
