@@ -1,0 +1,77 @@
+
+.header-section {
+    text-align: center;
+    padding: 40px 0;
+}
+.header-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease; /* Added for smooth transition */
+}
+.header-section h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: rgb(24, 24, 24);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition for width change */
+}
+.header-section h1:hover::after {
+    width: 80px; /* Increases width on hover */
+}
+.header-section p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .project-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .round-button {
+    border-radius: 20px; /* Changed from 50% to a fixed pixel value for pill shape */
+    padding: 6px 12px;   /* More appropriate padding for text content */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tech-icon {
+    margin-right: 4px;
+  }
+  
+  /* Add this to properly handle the container of badges */
+  p.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px; /* Modern spacing between flex items */
+  }
+  
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+  }
+
