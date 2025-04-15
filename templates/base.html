@@ -26,13 +26,16 @@
         padding: 10px 20px;
       }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   </head>
   <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Saim Safeer</a>
+        <a class="navbar-brand" href="/" style="font-family: 'Poppins', sans-serif;">Saim.</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,7 +62,7 @@
       </div>
     </nav>
 
-    {% include 'chatbot.html' %}
+  
     <!-- Main content -->
     <main class="container mt-4">
       {% block content %}

@@ -1,0 +1,66 @@
+/* Floating Icon */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 36px; /* Adjust the size */
+    color: #007bff; /* Set the color */
+    cursor: pointer; /* Add a pointer cursor */
+    background-color: #fff; /* Optional: Set a background color */
+    border-radius: 50%; /* Optional: Make it circular */
+    padding: 10px; /* Optional: Add padding around the icon */
+}
+.chatbot-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Chatbot Modal */
+.chatbot-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.chatbot-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.chatbot-messages {
+    height: 300px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbot-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.send-message {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.close-chatbot {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
