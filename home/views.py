@@ -30,14 +30,14 @@ def projects(request):
         },
         {
             "title": "Brain Tumor Detection",
-            "description": "A Brain Tumor Detection system using CNN and Keras.",
+            "description": "A Brain Tumor Detection system using CNN and Keras, the system was trained on a labeled dataset and achieved high accuracy in distinguishing between tumorous and non-tumorous brain scans",
             "technologies": ["Python", "Tensorflow", "Keras", "FASTAPI", "HTML", "CSS", "JavaScript"],
             "SourceCode": "https://github.com/isaimsafeer",
             "image": "https://media.licdn.com/dms/image/v2/C4D12AQEWHzMrlFh0nQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1651474032780?e=2147483647&v=beta&t=oXw2GMCCQFQ82ldQaVEWNzhh7oMJMoZLYPYkRZjN5KM"
         },
         {
             "title": "Image to Food and Ingredients Recogniton System",
-            "description": "A Brain Tumor Detection system using CNN and Keras.",
+            "description": "Combined Convolutional Neural Networks (CNN) for image recognition with a custom-trained NLP model to generate ingredient lists. Implemented the solution using TensorFlow and Keras for model development.",
             "technologies": ["Python", "Tensorflow", "Keras", "Streamlit"],
             "SourceCode": "https://github.com/isaimsafeer",
             "image": "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*OHZ6ukR4V5FVviY2ne_KIQ.jpeg"
